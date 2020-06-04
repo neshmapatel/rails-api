@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
 
     def index
         @users = User.all
-        render json: @users
+        render json: @users, status: 200
     end
     
     def show
@@ -13,6 +13,7 @@ class Api::V1::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             render json: @user
+            # render json: { message: 'User created successfully!'}
         else
             render json: { error: 'Unable to create User!'}, status: 400
         end
@@ -21,8 +22,8 @@ class Api::V1::UsersController < ApplicationController
     def update
         @user =User.find(params[:id])
         if @user
-            @user.destroy
-            render json: { message: 'User successfully!'}, status: 200
+            @user.update
+             render json: { message: 'updates the user'}, status: 200
         else
             render json: { error: 'Unable to update User!'}, status: 400
         end
