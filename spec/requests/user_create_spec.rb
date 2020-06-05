@@ -1,3 +1,4 @@
+# For vcr testing
 require "spec_helper"
 describe User do
     let(:user) {User.create} 
@@ -10,7 +11,7 @@ describe User do
         end
       
     end
-    
+
     describe "#index" do
         it "shows user" do
             VCR.use_cassette("cassettes") do

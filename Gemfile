@@ -30,13 +30,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # end
 
-gem 'vcr'
-gem 'webmock'
+
 group :development, :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'rspec-rails', '~> 3.6'
-  gem 'faker'
-  gem 'factory_girl', '~> 4.9'
-  gem 'factory_bot_rails'
   gem 'database_cleaner'
 end
 group :development do
