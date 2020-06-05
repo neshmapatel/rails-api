@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rails_helper'
 RSpec.describe Api::V1::UsersController  do
-    describe "GET #index" do
+    describe 'index' do
         before do
            get :index
         end
@@ -34,24 +34,24 @@ RSpec.describe Api::V1::UsersController  do
     #           expect(response).to be_redirect
     #     end
     # end
-    describe "update" do
-        # before do
-        #    patch :update
-        # end
+    # describe "update" do
+    #     # before do
+    #     #    patch :update
+    #     # end
     
-        it "successfully updates the user" do
-            expect(response).to have_http_status(:success)  
-        end
-        # it "unable to update user" do
-        #     expect(response).to have_http_status(:)
-        # end
+    #     it "successfully updates the user" do
+    #         expect(response).to have_http_status(:success)  
+    #     end
+    #     # it "unable to update user" do
+    #     #     expect(response).to have_http_status(:)
+    #     # end
        
-    end
+    # end
     
-    describe "destroy" do
-        it "user destroyed successfully" do
-            expect(response).to have_http_status(:success)
-        end
-    end
+    # describe "destroy" do
+    #     it "user destroyed successfully" do
+    #         expect(response).to have_http_status(:success)
+    #     end
+    # end
     
 end

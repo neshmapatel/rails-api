@@ -11,6 +11,18 @@
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
+
+require 'vcr'
+# require 'rspec/rails'
+# require 'rspec/autorun'
+require 'webmock/rspec'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+end
+WebMock.disable_net_connect!(allow_localhost: true)
+# Dir.["./spec/support/**/*.rb"].each { |f| require f}
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -97,4 +109,6 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  # config.treat_symbols_as_metadata_keys_with_true_values = true
+
 end
